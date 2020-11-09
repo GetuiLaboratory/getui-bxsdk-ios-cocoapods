@@ -1,42 +1,47 @@
 #
-# Be sure to run `pod lib lint GetuiBXSDK.podspec' to ensure this is a
-# valid spec before submitting.
+#  Be sure to run `pod spec lint GetuiBXSdk.podspec' to ensure this is a
+#  valid spec and to remove all comments including this before submitting the spec.
 #
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
+#  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
+#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'GetuiBXSDK'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of GetuiBXSDK.'
+  # 名称，pod search 搜索的关键词,注意这里一定要和.podspec的名称一样,否则报错
+  s.name         = "GetuiBXSDK"
+  # 版本号/库原代码的版本
+  s.version      = "2.1.0.0"
+  # 简介
+  s.summary      = "个推变现 iOS SDK CocoaPods 集成库"
+  # 项目主页地址
+  s.homepage     = "https://github.com/GetuiLaboratory/getui-bxsdk-ios-cocoapods"
+  # 许可证/所采用的授权版本
+  s.license      = "MIT"
+  # 库的作者
+  s.author       = { "个推" => "support@getui.com" }
+  # 项目的地址
+  s.source       = { :git => "https://github.com/GetuiLaboratory/getui-bxsdk-ios-cocoapods.git", :tag => "#{s.version}" }
+  # 支持的平台及版本
+  s.platform     = :ios
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.platform     = :ios, "9.0"
+  # iOS支持的pod最低版本 / iOS对应的版本
+  s.ios.deployment_target = "9.0"
+  # 需要包含的源文件
+  # s.source_files  = ''
+  # 使用了第三方静态库
+  s.ios.vendored_libraries = 'libGTCommonSDK-1.1.1.0.a'
+  s.ios.vendored_frameworks = 'GetuiBXSdk.framework'
+  # 所需的framework，多个用逗号隔开
+  s.frameworks = 'AdSupport', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'CoreMotion', 'MessageUI', 'QuartzCore', 'SafariServices', 'Security', 'SystemConfiguration', 'WebKit', 'CoreMedia'
+  # “弱引用”所需的framework，多个用逗号隔开
+  # s.ios.weak_frameworks = 'WebKit'
+  # 所需的library，多个用逗号隔开
+  s.libraries = 'c++', 'resolv', 'sqlite3', 'xml2', 'z'
+  # 是否使用ARC，如果指定具体文件，则具体的问题使用ARC
+  # s.requires_arc = true
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lObjC' }
+  # s.info_plist = { 'NSAppTransportSecurity' => 'NSAllowsArbitraryLoads' }
 
-  s.homepage         = 'https://github.com/aklee/GetuiBXSDK'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'aklee' => 'linwt@getui.com' }
-  s.source           = { :git => 'https://github.com/aklee/GetuiBXSDK.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'GetuiBXSDK/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'GetuiBXSDK' => ['GetuiBXSDK/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
