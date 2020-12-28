@@ -5,7 +5,7 @@
 //  Created by getui on 2020/8/5.
 //  Copyright © 2020 ak. All rights reserved.
 //
-//  GetuiBXSdK-Version: 2.1.0.0
+//  GetuiBXSdK-Version: 2.2.0.0
 
 #import <Foundation/Foundation.h>
 
@@ -69,6 +69,12 @@
  *  开启Debug模式，广告位配置`默认过期`，会实时向服务端请求当前的广告位配置。
  */
 + (void)setDebug;
+
+/** 设置用户标签
+ *  设置标签为覆盖模式
+ *  @param tags, 标签个数不能太多，每个tag也不能太长（具体限制请参考官网说明文档），tag中不能包含以下特殊字符："|", ",", "\n"
+ */
++ (void)setTags:(NSArray *)tags completion:(void (^)(BOOL isSuccess, NSError *error))completion;
 
 
 @end
