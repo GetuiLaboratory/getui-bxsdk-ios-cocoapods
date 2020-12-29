@@ -51,16 +51,21 @@ Pod::Spec.new do |s|
   s.subspec 'csj' do |ss|
     ss.dependency 'GetuiBXSDK/core'
     ss.dependency 'Bytedance-UnionAD', '3.3.1.5'
+    # ss.ios.vendored_frameworks = 'Vendor/CSJSDK/BUAdSDKSDK.framework', 'Vendor/CSJSDK/BUFoundation.framework'
+    # ss.resource = 'Vendor/CSJSDK/BUAdSDK.bundle'
   end
 
   s.subspec 'gdt' do |ss|
     ss.dependency 'GetuiBXSDK/core'
     ss.dependency 'GDTMobSDK', '4.11.12'
+    # ss.ios.vendored_libraries = 'Vendor/GDTSDK/libGDTMobSDK.a'
+    # ss.source_files = 'Vendor/GDTSDK/*.h'
   end
 
   s.subspec 'inmobi' do |ss|
     ss.dependency 'GetuiBXSDK/core'
     ss.dependency 'InMobiSDK-China', '7.5.0'
+    # ss.ios.vendored_frameworks = 'Vendor/InMob/InMobiSDK.framework'
   end
 
   s.subspec 'bd' do |ss|
@@ -72,7 +77,7 @@ Pod::Spec.new do |s|
     ss.dependency 'GetuiBXSDK/core'
     ss.ios.vendored_libraries = 'Vendor/BXMSDK/libBXMSDK.a'
     ss.resource = 'Vendor/BXMSDK/BXMAdSDK.bundle'
-    ss.source_files = 'Vendor/BXMSDK/*.{h,m}'
+    ss.source_files = 'Vendor/BXMSDK/*.h'
   end
 
 end
