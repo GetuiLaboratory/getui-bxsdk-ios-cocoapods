@@ -22,8 +22,6 @@ Pod::Spec.new do |s|
   # 项目的地址
   s.source       = { :git => "https://github.com/GetuiLaboratory/getui-bxsdk-ios-cocoapods.git", :tag => "#{s.version}" }
   # 支持的平台及版本
-  s.platform     = :ios
-
   s.platform     = :ios, "9.0"
   # iOS支持的pod最低版本 / iOS对应的版本
   s.ios.deployment_target = "9.0"
@@ -31,8 +29,10 @@ Pod::Spec.new do |s|
   s.subspec 'core' do |ss|
     # 需要包含的源文件
     # ss.source_files  = ''
+    # 依赖的第三方pod
+    ss.dependency 'GTCommonSDK', '1.1.1.0'
     # 使用了第三方静态库
-    ss.ios.vendored_libraries = 'Vendor/libGTCommonSDK-1.1.1.0.a'
+    # ss.ios.vendored_libraries = 'libxxx.a'
     ss.ios.vendored_frameworks = 'GetuiBXSdk.framework'
     # 所需的framework，多个用逗号隔开
     ss.frameworks = 'AdSupport', 'AVFoundation', 'CoreLocation', 'CoreTelephony', 'CoreMotion', 'MessageUI', 'QuartzCore', 'SafariServices', 'Security', 'SystemConfiguration', 'WebKit', 'CoreMedia'
