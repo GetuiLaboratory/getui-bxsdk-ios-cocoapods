@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
     # 需要包含的源文件
     # ss.source_files  = ''
     # 依赖的第三方pod
-    ss.dependency 'GTCommonSDK', '1.1.1.0'
+    ss.dependency 'GTCommonSDK', '>=1.1.1.0'
     # 使用了第三方静态库
     # ss.ios.vendored_libraries = 'libxxx.a'
     ss.ios.vendored_frameworks = 'GetuiBXSdk.framework'
@@ -50,21 +50,21 @@ Pod::Spec.new do |s|
 
   s.subspec 'csj' do |ss|
     ss.dependency 'GetuiBXSDK/core'
-    ss.dependency 'Bytedance-UnionAD', '3.3.1.5'
+    ss.dependency 'Bytedance-UnionAD', '>=3.3.1.5'
     # ss.ios.vendored_frameworks = 'Vendor/CSJSDK/BUAdSDKSDK.framework', 'Vendor/CSJSDK/BUFoundation.framework'
     # ss.resource = 'Vendor/CSJSDK/BUAdSDK.bundle'
   end
 
   s.subspec 'gdt' do |ss|
     ss.dependency 'GetuiBXSDK/core'
-    ss.dependency 'GDTMobSDK', '4.11.12'
+    ss.dependency 'GDTMobSDK', '>=4.11.12'
     # ss.ios.vendored_libraries = 'Vendor/GDTSDK/libGDTMobSDK.a'
     # ss.source_files = 'Vendor/GDTSDK/*.h'
   end
 
   s.subspec 'inmobi' do |ss|
     ss.dependency 'GetuiBXSDK/core'
-    ss.dependency 'InMobiSDK-China', '7.5.0'
+    ss.dependency 'InMobiSDK-China', '>=7.5.0'
     # ss.ios.vendored_frameworks = 'Vendor/InMob/InMobiSDK.framework'
   end
 
